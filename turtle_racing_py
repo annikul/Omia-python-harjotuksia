@@ -1,0 +1,124 @@
+import turtle
+import time
+
+from turtle import Turtle
+from random import randint
+
+#grass
+screen = turtle.Screen()
+tr=Turtle()
+
+screen.bgcolor('forestgreen')
+tr.color('white')
+tr.speed(0)
+tr.penup()
+tr.goto(-120, 280)
+tr.write('TURTLE RACE', font=('Arial', 20, 'bold'))
+tr.penup()
+
+#soil
+tr.goto(-400, -200)
+tr.color('chocolate')
+tr.begin_fill()
+tr.pendown()
+tr.forward(700)
+tr.right(90)
+tr.forward(60)
+tr.right(90)
+tr.forward(700)
+tr.end_fill()
+
+#finish line
+square_size=20
+finish_line=300
+
+tr.color('black')
+tr.shape('square')
+tr.penup()
+
+#draw finish line
+for i in range(14):
+    tr.goto(finish_line, (260-(i*square_size*2)))
+    tr.stamp()
+
+for j in range(13):
+    tr.goto(finish_line*square_size, ((260 - square_size) - (j* square_size*2)))
+    tr.stamp()
+
+#racer
+racer1=Turtle()
+racer1.speed(0)
+racer1.color('red')
+racer1.shape('turtle')
+racer1.turtlesize(3)
+racer1.penup()
+racer1.goto(-400, 200)
+racer1.pendown()
+
+#racer2
+racer2=Turtle()
+racer2.speed(0)
+racer2.color('cyan')
+racer2.shape('turtle')
+racer2.turtlesize(3)
+racer2.penup()
+racer2.goto(-400, 80)
+racer2.pendown
+
+#racer3
+racer3=Turtle()
+racer3.speed(0)
+racer3.color('purple')
+racer3.shape('turtle')
+racer3.turtlesize(3)
+racer3.penup()
+racer3.goto(-400, 40)
+racer3.pendown
+
+#racer4
+racer4=Turtle()
+racer4.speed(0)
+racer4.color('yellow')
+racer4.shape('turtle')
+racer4.turtlesize(3)
+racer4.penup()
+racer4.goto(-400, 160)
+racer4.pendown
+
+#move
+for i in range(210):
+    racer1.forward(randint(1, 5))
+    racer2.forward(randint(1, 5))
+    racer3.forward(randint(1, 5))
+    racer4.forward(randint(1, 5))
+
+#winner
+winner=Turtle()
+winner.hideturtle()
+winner.penup
+winner.setx(0)
+winner.setx(0)
+
+raceMap={'Red':racer1, 'Cyan':racer2, 'Purple':racer3, 'Yellow':racer4}
+key=list(raceMap.keys())
+#print(keys)
+
+#check distancee
+winnerColor=""
+for eachColor in keys:
+    eachRacer=racerMap[eachColor]
+    print(eachColor, eachRacer.xcor(), winner.xcor())
+    if(eachRacer.xcor()>winner.xcor()):
+        winner=eachRacer
+        winnerColor=eachColor
+
+#print(winnerColor)
+#display winner
+winnerMessage='WINNER: '+winnerColor+' Turtle'
+turtle.color('white')
+turtle.speed(0)
+turtle.penup()
+turtle.goto(-150, 20)
+turtle.write(winnerMessage, font=('Arial', 20, ' bold'))
+turtle.hideturtle()
+turtle.done
