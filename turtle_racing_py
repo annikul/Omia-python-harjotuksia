@@ -105,8 +105,8 @@ key=list(raceMap.keys())
 
 #check distancee
 winnerColor=""
-for eachColor in keys:
-    eachRacer=racerMap[eachColor]
+for eachColor in key:
+    eachRacer=raceMap[eachColor]
     print(eachColor, eachRacer.xcor(), winner.xcor())
     if(eachRacer.xcor()>winner.xcor()):
         winner=eachRacer
