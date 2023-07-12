@@ -1,4 +1,5 @@
-#funktio 2-lla parametrilla
+# funktio 2-lla parametrilla
+
 def funktion_nimi(parametri, toinen_parametri):
     if toinen_parametri == 2:
         return parametri + '-extra-extra'
@@ -7,14 +8,14 @@ def funktion_nimi(parametri, toinen_parametri):
 
 
 
-#alustetaan muuttujat inputista
+# alustetaan muuttujat inputista
 parametri = input('Anna parametrin arvo: ')
 toinen_parametri = int(input('Anna count arvo: '))
 
-#suoritetaan funktio ja otetaan tulos talteen muuttujaan
+# suoritetaan funktio ja otetaan tulos talteen muuttujaan
 funktion_palautus = funktion_nimi(parametri, toinen_parametri) 
 
-#tulostetaan talteen otettu funktion tulos
+# tulostetaan talteen otettu funktion tulos
 print(funktion_palautus)
 
 
